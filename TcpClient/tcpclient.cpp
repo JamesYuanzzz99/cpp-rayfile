@@ -36,10 +36,6 @@ void TcpClient::loadConfig()
         m_strIP = strList.at(0);
         m_usPort = strList.at(1).toUShort();
 
-
-
-
-
     }
     else
     {
@@ -50,5 +46,24 @@ void TcpClient::loadConfig()
 void TcpClient::showConnect()
 {
     QMessageBox::information(this,"1111","2222");
+}
+
+
+void TcpClient::on_pushButton_clicked()
+{
+    QString strMsg = ui->lineEdit->text();
+    if(!strMsg.isEmpty())
+    {
+        PDU *pdu = mkPDU(strMsg.size()+1);
+        pdu->uiMsgType = 8888;
+        memcpy(pdu->caMsg,strMsg.toStdString().c_str(),strMsg.size());
+        m_tcpScoket.write((char*)pdu,pdu->uiPDULen);
+        free(pdu);
+        pdu = NULL;
+    }
+    else
+    {
+        QMessageBox::warning(this,"massage sent","can't be NULL");
+    }
 }
 

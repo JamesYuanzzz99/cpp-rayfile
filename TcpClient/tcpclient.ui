@@ -13,6 +13,41 @@
   <property name="windowTitle">
    <string>TcpClient</string>
   </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QTextEdit" name="textEdit">
+       <property name="font">
+        <font>
+         <family>Agency FB</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="font">
+         <font>
+          <family>Agency FB</family>
+         </font>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>发送</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
